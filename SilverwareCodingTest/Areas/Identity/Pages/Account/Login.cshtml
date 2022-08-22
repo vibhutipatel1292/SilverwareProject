@@ -1,0 +1,74 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+<style>
+    
+</style>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="row d-flex justify-content-center col-12 border border-primary rounded m-20 rounded-ex login">
+            <div >
+                <img src="~/Images/Logo1.png" width="200" height="150"  />
+            </div>
+            <div style="width: 70%">
+                <form id="account" method="post"> 
+                    <h2>LOG IN</h2>
+                    <hr />
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Input.Email"></label>
+                        <input asp-for="Input.Email" class="form-control" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Password"></label>
+                        <input asp-for="Input.Password" class="form-control" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="margin-top:10%">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Log in</button>
+                    </div>
+                    <div class="form-group">
+                        <p>
+                            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-6">
+        <div class="text-center">
+            <img src="~/Images/Business-PNG-File.png" width="500" style="padding-top:30%;" />
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('header').empty();
+        $('footer').empty();
+     });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
